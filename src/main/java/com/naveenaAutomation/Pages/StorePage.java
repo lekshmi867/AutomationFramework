@@ -22,6 +22,7 @@ public class StorePage extends TestBase{
 	@FindBy(css="ul.dropdown-menu li:last-of-type a")
 	WebElement login;
 	
+	
 	private void clickMyAccountDropDown() {
 		myaccount.click();
 	}

@@ -23,20 +23,17 @@ public class MyAccountTest extends TestBase {
 	public void setUp() {
 		launchBrowser();
 		storePage = new StorePage();
-		//accountLoginPage = new AccountLoginPage();
 		}
 
 	@Test
-	public void verifyLogin() {
-		accountLoginPage =storePage.clickLoginLink();
-		myAccountPage = accountLoginPage.login("lekshmiv123@gmail.com", "Password1");
+	public void verifyUserLogin() {
+		verifyLogin();
 		Assert.assertEquals(myAccountPage.getMyAccountText(), "My Account", "Login Failed");
 	}
 	
 	@Test
 	public void verifyPhoneNumberUpdate() {
-		accountLoginPage =storePage.clickLoginLink();
-		myAccountPage = accountLoginPage.login("lekshmiv123@gmail.com", "Password1");
+		verifyLogin();
 		myAccountInformationPage =myAccountPage.clickEditYourAccountInfo();
 		myAccountInformationPage.changePhoneNumber("678912345");
 		myAccountPage = myAccountInformationPage.clickContinueBtn();
@@ -46,8 +43,7 @@ public class MyAccountTest extends TestBase {
 	
 	@Test
 	public void verifyNewsLetterSubscription() {
-		accountLoginPage =storePage.clickLoginLink();
-		myAccountPage = accountLoginPage.login("lekshmiv123@gmail.com", "Password1");
+		verifyLogin();
 		newsLetterSubscriptionPage = myAccountPage.clickSubscribeNewsLetterLink();
 		newsLetterSubscriptionPage.clickSubscribeOption("no");
 		myAccountPage=newsLetterSubscriptionPage.clickContinueBtn();
@@ -58,5 +54,9 @@ public class MyAccountTest extends TestBase {
 	@AfterMethod
 	public void teardown() {
 		quitBrowser();
+	}
+	void verifyLogin() {
+		accountLoginPage =storePage.clickLoginLink();
+		myAccountPage = accountLoginPage.login("lekshmiv123@gmail.com", "Password1");	
 	}
 }

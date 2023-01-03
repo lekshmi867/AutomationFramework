@@ -25,6 +25,19 @@ public class MyAccountPage extends TestBase {
 	
 	@FindBy(css="div.list-group a:last-of-type")
 	WebElement logoutLink;
+	
+	@FindBy(xpath="//a[text()='Laptops & Notebooks']")
+	WebElement laptopMousehover;
+	
+	@FindBy(xpath="//a[text()='Show All Laptops & Notebooks']")
+	WebElement showAllLaptopLink;
+	
+	
+	public LaptopNotebookPage clickShowAllLaptopLink() {
+		action.moveToElement(laptopMousehover).perform();
+		showAllLaptopLink.click();
+		return new LaptopNotebookPage();
+		}
 
 	public String getMyAccountText() {
 		return myAccountText.getText();

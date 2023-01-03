@@ -22,11 +22,11 @@ public class AccountLoginPage extends TestBase {
 	@FindBy(css = "input[type='submit']")
 	WebElement loginBtn;
 	
-	public void enterEmailInputField(String email) {
+	private void enterEmailInputField(String email) {
 		emailInputField.sendKeys(email);
 	}
 
-	public void enterPasswordInputField(String password) {
+	private void enterPasswordInputField(String password) {
 		passwordInputField.sendKeys(password);
 	}
 
