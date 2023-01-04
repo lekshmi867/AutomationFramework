@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.naveenautomation.Base.TestBase;
@@ -27,11 +26,10 @@ public class MyWishListPage extends TestBase{
 	public WebElement getElementFromTheTable(String productName, WishList column) {
 
 		int columnIndex = getIndexForColumn(column);
-		//System.out.println(columnIndex);
+		System.out.println(columnIndex);
 
 		List<WebElement> rowsInTable = driver
 				.findElements(By.cssSelector("table[class='table table-bordered table-hover'] tbody tr "));
-		//System.out.println(rowsInTable);
 		for (int i = 0; i < rowsInTable.size(); i++) {
 			List<WebElement> cells = rowsInTable.get(i).findElements(By.cssSelector("td"));
 			String productNameText = cells.get(1).getText();
@@ -43,6 +41,14 @@ public class MyWishListPage extends TestBase{
 
 		System.out.println("Column name was not found!!!");
 		return null;
+	}
+	public WebElement getElementToBeDeleted(WebElement deleteElementColumn) {
+		
+		return deleteElementColumn.findElement(By.cssSelector("a"));
+	}
+	
+	public void clickItemToBeDeletedFromwishList(WebElement elementToBeDeleted) {
+		action.moveToElement(getElementToBeDeleted(elementToBeDeleted)).click().perform();
 	}
 	
 	public String getTitleFromPage() {

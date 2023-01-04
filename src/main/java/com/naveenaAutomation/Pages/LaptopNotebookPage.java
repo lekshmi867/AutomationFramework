@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
@@ -33,7 +32,7 @@ public class LaptopNotebookPage extends TestBase {
 	@FindBy(css = "#wishlist-total")
 	WebElement wishlistLink;
 
-	@FindBy(css = "div.alert-success")
+	@FindBy(css = "div.alert.alert-success.alert-dismissible")
 	WebElement successBanner;
 
 	public String getLaptopNotebbokText() {
@@ -64,8 +63,8 @@ public class LaptopNotebookPage extends TestBase {
 		MacBookAirWishlistIcon.click();
 	}
 
-	public String getSuccessBannerText(String text) {
-		wait.until(ExpectedConditions.textToBePresentInElement(successBanner, text));
+	public String getSuccessBannerText() {
+		wait.until(ExpectedConditions.visibilityOf(successBanner));
 		return successBanner.getText();
 	}
 

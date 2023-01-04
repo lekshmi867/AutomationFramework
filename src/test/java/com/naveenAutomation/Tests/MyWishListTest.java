@@ -25,8 +25,7 @@ public class MyWishListTest extends TestBase {
 		launchBrowser();
 		storePage = new StorePage();
 		accountLoginPage =storePage.clickLoginLink();
-		myAccountPage = accountLoginPage.login("lekshmiv123@gmail.com", "Password1");
-		
+		myAccountPage = accountLoginPage.login("lekshmiv123@gmail.com", "Password1");	
 	}
 
 	@Test
@@ -36,11 +35,11 @@ public class MyWishListTest extends TestBase {
 		sf.assertEquals(laptopNotebbokPage.getLaptopNotebbokText(), "Laptops & Notebooks", "text is incorrect");
 		laptopNotebbokPage.selectByVisibleText("Rating (Highest)");
 		laptopNotebbokPage.addSonyVaioToWishlist();
-		sf.assertTrue(laptopNotebbokPage.getSuccessBannerText("Sony VAIO").contains("Sony VAIO"));
+		sf.assertEquals(laptopNotebbokPage.getSuccessBannerText(), "Success: You have added Sony VAIO to your wish list!\n×","Message not valid");
 		laptopNotebbokPage.addMacBookProToWishlist();
-		sf.assertTrue(laptopNotebbokPage.getSuccessBannerText("MacBook Pro").contains("MacBook Pro"), "Page Not Valid");
+		sf.assertEquals(laptopNotebbokPage.getSuccessBannerText(),"Success: You have added MacBook Pro to your wish list!\n×", "Message Not Valid");
 		laptopNotebbokPage.addMacBookAirToWishlist();
-		sf.assertTrue(laptopNotebbokPage.getSuccessBannerText("MacBook Air").contains("MacBook Air"), "Page Not Valid");
+		sf.assertEquals(laptopNotebbokPage.getSuccessBannerText(),"Success: You have added MacBook Air to your wish list!\n×", "Message Not Valid");
 		MyWishListPage myWishListPage = laptopNotebbokPage.clickWishList();
 		sf.assertEquals(myWishListPage.getTitleFromPage(),"My Wish List", "Page not valid");
 		WebElement sonyPriceElement=myWishListPage.getElementFromTheTable("Sony VAIO", WishList.UNITPRICE);
@@ -49,8 +48,9 @@ public class MyWishListTest extends TestBase {
 		sf.assertEquals(macProPriceElement.getText(),"$2,000.00", "Price not matching");
 		WebElement macAirPriceElement=myWishListPage.getElementFromTheTable("MacBook Air", WishList.UNITPRICE);
 		sf.assertEquals(macAirPriceElement.getText(),"$1,202.00", "Price not matching");
-		myWishListPage.clickDeleteIcon();
-		sf.assertTrue(myWishListPage.getSuccessBannerText().contains("modified"), "Invalid success message");
+		WebElement elementToBeDeleted =myWishListPage.getElementFromTheTable("Sony VAIO", WishList.ACTION);
+		myWishListPage.clickItemToBeDeletedFromwishList(elementToBeDeleted);
+		sf.assertEquals(myWishListPage.getSuccessBannerText(),"Success: You have modified your wish list!\n×", "Invalid success message");
 		sf.assertAll();
 		
 	}
