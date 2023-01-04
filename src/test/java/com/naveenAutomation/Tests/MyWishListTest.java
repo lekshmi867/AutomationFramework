@@ -29,7 +29,7 @@ public class MyWishListTest extends TestBase {
 	}
 
 	@Test
-	public void VerifyUserIsAbleToSignUpSuccessFully() {
+	public void VerifyUserIsAbleToAddProductsToWishList() {
 		LaptopNotebookPage laptopNotebbokPage = myAccountPage.clickShowAllLaptopLink();
 		sf.assertEquals(driver.getTitle(),"Laptops & Notebooks","Page not valid");
 		sf.assertEquals(laptopNotebbokPage.getLaptopNotebbokText(), "Laptops & Notebooks", "text is incorrect");
