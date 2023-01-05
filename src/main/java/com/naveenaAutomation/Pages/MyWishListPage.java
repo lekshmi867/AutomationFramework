@@ -1,6 +1,7 @@
 package com.naveenaAutomation.Pages;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -10,15 +11,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.naveenautomation.Base.TestBase;
 
+
+
 public class MyWishListPage extends TestBase{
 	
 	public MyWishListPage() {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(css="tbody tr:nth-of-type(3) td:nth-of-type(6) a")
-	WebElement deleteIcon;
-	
 
 	@FindBy(css="div.alert-success")
 	WebElement successBanner;
@@ -26,19 +26,19 @@ public class MyWishListPage extends TestBase{
 	public WebElement getElementFromTheTable(String productName, WishList column) {
 
 		int columnIndex = getIndexForColumn(column);
-		System.out.println(columnIndex);
 
 		List<WebElement> rowsInTable = driver
 				.findElements(By.cssSelector("table[class='table table-bordered table-hover'] tbody tr "));
 		for (int i = 0; i < rowsInTable.size(); i++) {
 			List<WebElement> cells = rowsInTable.get(i).findElements(By.cssSelector("td"));
+
 			String productNameText = cells.get(1).getText();
 			if (productNameText.equals(productName)) {
 				return cells.get(columnIndex);
 			}
 
 		}
-
+		
 		System.out.println("Column name was not found!!!");
 		return null;
 	}
@@ -56,27 +56,31 @@ public class MyWishListPage extends TestBase{
 		return driver.getTitle();
 	}
 	
+	
 	public int getIndexForColumn(WishList column) {
 		List<WebElement> headers = driver
 				.findElements(By.cssSelector("table[class='table table-bordered table-hover'] thead tr td"));
-
-		for (WebElement webElement : headers) {
-			String headerText = webElement.getText();
-			if (headerText.equals(column.getName())) {
-				return headers.indexOf(webElement);
-			}
-
-		}
-		System.out.println("Column does not exist.....");
-		return -1;
+		
+		
+		Optional<Integer> optionalIndex =  Optional.of(headers.stream().filter(h->h.getText().equals(column.getName())).findAny().map(h->headers.indexOf(h)).orElse(-1));
+		Integer columnIndex = Integer.valueOf(optionalIndex.get());
+		return columnIndex;
+		
+		
+//		
+//		for (WebElement webElement : headers) {
+//			String headerText = webElement.getText();
+//			if (headerText.equals(column.getName())) {
+//				return headers.indexOf(webElement);
+//			}
+//
+//		}
+//		System.out.println("Column does not exist.....");
+//		return -1;
 	}
 	
-	public void clickDeleteIcon() {
-		deleteIcon.click();
-	}
 	
 	public String getSuccessBannerText() {
-		//wait.until(ExpectedConditions.textToBePresentInElement(successBanner, text));
 		return successBanner.getText();
 	}
 
