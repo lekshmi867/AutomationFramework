@@ -1,7 +1,6 @@
 package com.naveenaAutomation.Pages;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -43,7 +42,6 @@ public class MyWishListPage extends TestBase{
 		return null;
 	}
 	public WebElement getElementToBeDeleted(WebElement deleteElementColumn) {
-		
 		return deleteElementColumn.findElement(By.cssSelector("a"));
 	}
 	
@@ -62,21 +60,9 @@ public class MyWishListPage extends TestBase{
 				.findElements(By.cssSelector("table[class='table table-bordered table-hover'] thead tr td"));
 		
 		
-		Optional<Integer> optionalIndex =  Optional.of(headers.stream().filter(h->h.getText().equals(column.getName())).findAny().map(h->headers.indexOf(h)).orElse(-1));
-		Integer columnIndex = Integer.valueOf(optionalIndex.get());
+		int columnIndex =  headers.stream().filter(h->h.getText().equals(column.getName())).findAny().map(h->headers.indexOf(h)).orElse(-1);
 		return columnIndex;
 		
-		
-//		
-//		for (WebElement webElement : headers) {
-//			String headerText = webElement.getText();
-//			if (headerText.equals(column.getName())) {
-//				return headers.indexOf(webElement);
-//			}
-//
-//		}
-//		System.out.println("Column does not exist.....");
-//		return -1;
 	}
 	
 	

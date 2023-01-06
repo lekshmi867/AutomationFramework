@@ -32,6 +32,9 @@ public class MyAccountPage extends TestBase {
 	@FindBy(xpath="//a[text()='Show All Laptops & Notebooks']")
 	WebElement showAllLaptopLink;
 	
+	@FindBy(css="div.list-group a:nth-of-type(4)")
+	WebElement addressHistoryIcon;
+	
 	
 	public LaptopNotebookPage clickShowAllLaptopLink() {
 		action.moveToElement(laptopMousehover).perform();
@@ -60,6 +63,12 @@ public class MyAccountPage extends TestBase {
 	public AccountLogoutPage clickLogoutLink() {
 		logoutLink.click();
 		return new AccountLogoutPage();
+	}
+	
+	public AddressBookPage clickAddressHistory() {
+		addressHistoryIcon.click();
+		return new AddressBookPage();
+		
 	}
 
 	
