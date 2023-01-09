@@ -1,0 +1,136 @@
+2023-01-07 19:15:07 INFO  CustomListener:19 - Test execution has started for : testSomething
+2023-01-07 19:15:09 ERROR CustomListener:30 - Test execution failed and taking screen shot: testSomething
+2023-01-07 19:15:13 INFO  CustomListener:19 - Test execution has started for : verifyNewsLetterSubscription
+2023-01-07 19:15:16 INFO  CustomListener:24 - Test execution has passed for : verifyNewsLetterSubscription
+2023-01-07 19:15:20 INFO  CustomListener:19 - Test execution has started for : verifyPhoneNumberUpdate
+2023-01-07 19:15:23 INFO  CustomListener:24 - Test execution has passed for : verifyPhoneNumberUpdate
+2023-01-07 19:15:28 INFO  CustomListener:19 - Test execution has started for : verifyUserLogin
+2023-01-07 19:15:30 INFO  CustomListener:24 - Test execution has passed for : verifyUserLogin
+2023-01-07 21:08:52 INFO  CustomListener:19 - Test execution has started for : testSomething
+2023-01-07 21:08:52 INFO  CustomListener:36 - Test execution has skipped for : testSomething
+2023-01-07 21:08:52 INFO  CustomListener:19 - Test execution has started for : verifyNewsLetterSubscription
+2023-01-07 21:08:52 INFO  CustomListener:36 - Test execution has skipped for : verifyNewsLetterSubscription
+2023-01-07 21:08:52 INFO  CustomListener:19 - Test execution has started for : verifyPhoneNumberUpdate
+2023-01-07 21:08:52 INFO  CustomListener:36 - Test execution has skipped for : verifyPhoneNumberUpdate
+2023-01-07 21:08:52 INFO  CustomListener:19 - Test execution has started for : verifyUserLogin
+2023-01-07 21:08:52 INFO  CustomListener:36 - Test execution has skipped for : verifyUserLogin
+2023-01-07 21:10:10 INFO  CustomListener:19 - Test execution has started for : testSomething
+2023-01-07 21:10:10 INFO  CustomListener:36 - Test execution has skipped for : testSomething
+2023-01-07 21:10:10 INFO  CustomListener:19 - Test execution has started for : verifyNewsLetterSubscription
+2023-01-07 21:10:10 INFO  CustomListener:36 - Test execution has skipped for : verifyNewsLetterSubscription
+2023-01-07 21:10:10 INFO  CustomListener:19 - Test execution has started for : verifyPhoneNumberUpdate
+2023-01-07 21:10:10 INFO  CustomListener:36 - Test execution has skipped for : verifyPhoneNumberUpdate
+2023-01-07 21:10:10 INFO  CustomListener:19 - Test execution has started for : verifyUserLogin
+2023-01-07 21:10:10 INFO  CustomListener:36 - Test execution has skipped for : verifyUserLogin
+2023-01-07 21:11:42 INFO  WebdriverEvents:43 - navigating tohttps://naveenautomationlabs.com/opencart/index.php?route=common/home
+2023-01-07 21:11:46 INFO  WebdriverEvents:49 - Navigated tohttps://naveenautomationlabs.com/opencart/index.php?route=common/home
+2023-01-07 21:11:46 INFO  CustomListener:19 - Test execution has started for : testSomething
+2023-01-07 21:11:46 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: a[title='My Account']
+2023-01-07 21:11:46 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: a[title='My Account']
+2023-01-07 21:11:46 INFO  WebdriverEvents:102 - clicking on[[ChromeDriver: chrome on WINDOWS (0d2d01524986da0acf18d644ffb0d75a)] -> css selector: a[title='My Account']]
+2023-01-07 21:11:46 INFO  WebdriverEvents:108 - clicked on[[ChromeDriver: chrome on WINDOWS (0d2d01524986da0acf18d644ffb0d75a)] -> css selector: a[title='My Account']]
+2023-01-07 21:11:46 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: ul.dropdown-menu li:last-of-type a
+2023-01-07 21:11:46 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: ul.dropdown-menu li:last-of-type a
+2023-01-07 21:11:46 INFO  WebdriverEvents:102 - clicking on[[ChromeDriver: chrome on WINDOWS (0d2d01524986da0acf18d644ffb0d75a)] -> css selector: ul.dropdown-menu li:last-of-type a]
+2023-01-07 21:11:47 INFO  WebdriverEvents:108 - clicked on[[ChromeDriver: chrome on WINDOWS (0d2d01524986da0acf18d644ffb0d75a)] -> css selector: ul.dropdown-menu li:last-of-type a]
+2023-01-07 21:11:47 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: form div.form-group:first-of-type input
+2023-01-07 21:11:47 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: form div.form-group:first-of-type input
+2023-01-07 21:11:47 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: form div.form-group:last-of-type input
+2023-01-07 21:11:47 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: form div.form-group:last-of-type input
+2023-01-07 21:11:47 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: input[type='submit']
+2023-01-07 21:11:47 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: input[type='submit']
+2023-01-07 21:11:49 INFO  WebdriverEvents:90 - Finding elementBy.xpath: //h2[text()='My Account']
+2023-01-07 21:11:49 INFO  WebdriverEvents:96 - Elelement FoundBy.xpath: //h2[text()='My Account']
+2023-01-07 21:11:49 INFO  WebdriverEvents:168 - getting text from [[ChromeDriver: chrome on WINDOWS (0d2d01524986da0acf18d644ffb0d75a)] -> xpath: //h2[text()='My Account']]
+2023-01-07 21:11:49 INFO  WebdriverEvents:174 - Got text from [[ChromeDriver: chrome on WINDOWS (0d2d01524986da0acf18d644ffb0d75a)] -> xpath: //h2[text()='My Account']]
+2023-01-07 21:11:49 ERROR CustomListener:30 - Test execution failed and taking screen shot: testSomething
+2023-01-07 21:11:50 INFO  WebdriverEvents:43 - navigating tohttps://naveenautomationlabs.com/opencart/index.php?route=common/home
+2023-01-07 21:11:53 INFO  WebdriverEvents:49 - Navigated tohttps://naveenautomationlabs.com/opencart/index.php?route=common/home
+2023-01-07 21:11:53 INFO  CustomListener:19 - Test execution has started for : verifyNewsLetterSubscription
+2023-01-07 21:11:53 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: a[title='My Account']
+2023-01-07 21:11:53 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: a[title='My Account']
+2023-01-07 21:11:53 INFO  WebdriverEvents:102 - clicking on[[ChromeDriver: chrome on WINDOWS (8e1c263ef777f874117a2e5d13d29075)] -> css selector: a[title='My Account']]
+2023-01-07 21:11:53 INFO  WebdriverEvents:108 - clicked on[[ChromeDriver: chrome on WINDOWS (8e1c263ef777f874117a2e5d13d29075)] -> css selector: a[title='My Account']]
+2023-01-07 21:11:53 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: ul.dropdown-menu li:last-of-type a
+2023-01-07 21:11:53 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: ul.dropdown-menu li:last-of-type a
+2023-01-07 21:11:53 INFO  WebdriverEvents:102 - clicking on[[ChromeDriver: chrome on WINDOWS (8e1c263ef777f874117a2e5d13d29075)] -> css selector: ul.dropdown-menu li:last-of-type a]
+2023-01-07 21:11:54 INFO  WebdriverEvents:108 - clicked on[[ChromeDriver: chrome on WINDOWS (8e1c263ef777f874117a2e5d13d29075)] -> css selector: ul.dropdown-menu li:last-of-type a]
+2023-01-07 21:11:54 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: form div.form-group:first-of-type input
+2023-01-07 21:11:54 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: form div.form-group:first-of-type input
+2023-01-07 21:11:54 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: form div.form-group:last-of-type input
+2023-01-07 21:11:54 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: form div.form-group:last-of-type input
+2023-01-07 21:11:54 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: input[type='submit']
+2023-01-07 21:11:54 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: input[type='submit']
+2023-01-07 21:11:55 INFO  WebdriverEvents:90 - Finding elementBy.xpath: //a[contains(text(),'Subscribe')]
+2023-01-07 21:11:55 INFO  WebdriverEvents:96 - Elelement FoundBy.xpath: //a[contains(text(),'Subscribe')]
+2023-01-07 21:11:55 INFO  WebdriverEvents:102 - clicking on[[ChromeDriver: chrome on WINDOWS (8e1c263ef777f874117a2e5d13d29075)] -> xpath: //a[contains(text(),'Subscribe')]]
+2023-01-07 21:11:56 INFO  WebdriverEvents:108 - clicked on[[ChromeDriver: chrome on WINDOWS (8e1c263ef777f874117a2e5d13d29075)] -> xpath: //a[contains(text(),'Subscribe')]]
+2023-01-07 21:11:56 INFO  WebdriverEvents:90 - Finding elementBy.xpath: //input[@value='0']
+2023-01-07 21:11:56 INFO  WebdriverEvents:96 - Elelement FoundBy.xpath: //input[@value='0']
+2023-01-07 21:11:56 INFO  WebdriverEvents:102 - clicking on[[ChromeDriver: chrome on WINDOWS (8e1c263ef777f874117a2e5d13d29075)] -> xpath: //input[@value='0']]
+2023-01-07 21:11:56 INFO  WebdriverEvents:108 - clicked on[[ChromeDriver: chrome on WINDOWS (8e1c263ef777f874117a2e5d13d29075)] -> xpath: //input[@value='0']]
+2023-01-07 21:11:56 INFO  WebdriverEvents:90 - Finding elementBy.xpath: //input[@value='Continue']
+2023-01-07 21:11:56 INFO  WebdriverEvents:96 - Elelement FoundBy.xpath: //input[@value='Continue']
+2023-01-07 21:11:56 INFO  WebdriverEvents:102 - clicking on[[ChromeDriver: chrome on WINDOWS (8e1c263ef777f874117a2e5d13d29075)] -> xpath: //input[@value='Continue']]
+2023-01-07 21:11:57 INFO  WebdriverEvents:108 - clicked on[[ChromeDriver: chrome on WINDOWS (8e1c263ef777f874117a2e5d13d29075)] -> xpath: //input[@value='Continue']]
+2023-01-07 21:11:57 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: div.alert-success
+2023-01-07 21:11:57 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: div.alert-success
+2023-01-07 21:11:57 INFO  WebdriverEvents:168 - getting text from [[ChromeDriver: chrome on WINDOWS (8e1c263ef777f874117a2e5d13d29075)] -> css selector: div.alert-success]
+2023-01-07 21:11:57 INFO  WebdriverEvents:174 - Got text from [[ChromeDriver: chrome on WINDOWS (8e1c263ef777f874117a2e5d13d29075)] -> css selector: div.alert-success]
+2023-01-07 21:11:57 INFO  CustomListener:24 - Test execution has passed for : verifyNewsLetterSubscription
+2023-01-07 21:11:58 INFO  WebdriverEvents:43 - navigating tohttps://naveenautomationlabs.com/opencart/index.php?route=common/home
+2023-01-07 21:12:01 INFO  WebdriverEvents:49 - Navigated tohttps://naveenautomationlabs.com/opencart/index.php?route=common/home
+2023-01-07 21:12:01 INFO  CustomListener:19 - Test execution has started for : verifyPhoneNumberUpdate
+2023-01-07 21:12:01 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: a[title='My Account']
+2023-01-07 21:12:01 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: a[title='My Account']
+2023-01-07 21:12:01 INFO  WebdriverEvents:102 - clicking on[[ChromeDriver: chrome on WINDOWS (1a5b49a9a7a975e11b182fe7ba0c1caf)] -> css selector: a[title='My Account']]
+2023-01-07 21:12:01 INFO  WebdriverEvents:108 - clicked on[[ChromeDriver: chrome on WINDOWS (1a5b49a9a7a975e11b182fe7ba0c1caf)] -> css selector: a[title='My Account']]
+2023-01-07 21:12:01 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: ul.dropdown-menu li:last-of-type a
+2023-01-07 21:12:01 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: ul.dropdown-menu li:last-of-type a
+2023-01-07 21:12:01 INFO  WebdriverEvents:102 - clicking on[[ChromeDriver: chrome on WINDOWS (1a5b49a9a7a975e11b182fe7ba0c1caf)] -> css selector: ul.dropdown-menu li:last-of-type a]
+2023-01-07 21:12:02 INFO  WebdriverEvents:108 - clicked on[[ChromeDriver: chrome on WINDOWS (1a5b49a9a7a975e11b182fe7ba0c1caf)] -> css selector: ul.dropdown-menu li:last-of-type a]
+2023-01-07 21:12:02 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: form div.form-group:first-of-type input
+2023-01-07 21:12:02 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: form div.form-group:first-of-type input
+2023-01-07 21:12:02 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: form div.form-group:last-of-type input
+2023-01-07 21:12:02 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: form div.form-group:last-of-type input
+2023-01-07 21:12:02 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: input[type='submit']
+2023-01-07 21:12:02 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: input[type='submit']
+2023-01-07 21:12:03 INFO  WebdriverEvents:90 - Finding elementBy.xpath: //a[text()='Edit your account information']
+2023-01-07 21:12:03 INFO  WebdriverEvents:96 - Elelement FoundBy.xpath: //a[text()='Edit your account information']
+2023-01-07 21:12:03 INFO  WebdriverEvents:102 - clicking on[[ChromeDriver: chrome on WINDOWS (1a5b49a9a7a975e11b182fe7ba0c1caf)] -> xpath: //a[text()='Edit your account information']]
+2023-01-07 21:12:04 INFO  WebdriverEvents:108 - clicked on[[ChromeDriver: chrome on WINDOWS (1a5b49a9a7a975e11b182fe7ba0c1caf)] -> xpath: //a[text()='Edit your account information']]
+2023-01-07 21:12:04 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: #input-telephone
+2023-01-07 21:12:04 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: #input-telephone
+2023-01-07 21:12:04 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: #input-telephone
+2023-01-07 21:12:04 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: #input-telephone
+2023-01-07 21:12:04 INFO  WebdriverEvents:90 - Finding elementBy.xpath: //input[@value='Continue']
+2023-01-07 21:12:04 INFO  WebdriverEvents:96 - Elelement FoundBy.xpath: //input[@value='Continue']
+2023-01-07 21:12:04 INFO  WebdriverEvents:102 - clicking on[[ChromeDriver: chrome on WINDOWS (1a5b49a9a7a975e11b182fe7ba0c1caf)] -> xpath: //input[@value='Continue']]
+2023-01-07 21:12:05 INFO  WebdriverEvents:108 - clicked on[[ChromeDriver: chrome on WINDOWS (1a5b49a9a7a975e11b182fe7ba0c1caf)] -> xpath: //input[@value='Continue']]
+2023-01-07 21:12:05 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: div.alert-success
+2023-01-07 21:12:05 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: div.alert-success
+2023-01-07 21:12:05 INFO  WebdriverEvents:168 - getting text from [[ChromeDriver: chrome on WINDOWS (1a5b49a9a7a975e11b182fe7ba0c1caf)] -> css selector: div.alert-success]
+2023-01-07 21:12:05 INFO  WebdriverEvents:174 - Got text from [[ChromeDriver: chrome on WINDOWS (1a5b49a9a7a975e11b182fe7ba0c1caf)] -> css selector: div.alert-success]
+2023-01-07 21:12:05 INFO  CustomListener:24 - Test execution has passed for : verifyPhoneNumberUpdate
+2023-01-07 21:12:06 INFO  WebdriverEvents:43 - navigating tohttps://naveenautomationlabs.com/opencart/index.php?route=common/home
+2023-01-07 21:12:09 INFO  WebdriverEvents:49 - Navigated tohttps://naveenautomationlabs.com/opencart/index.php?route=common/home
+2023-01-07 21:12:09 INFO  CustomListener:19 - Test execution has started for : verifyUserLogin
+2023-01-07 21:12:09 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: a[title='My Account']
+2023-01-07 21:12:09 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: a[title='My Account']
+2023-01-07 21:12:09 INFO  WebdriverEvents:102 - clicking on[[ChromeDriver: chrome on WINDOWS (495e0634afee787a9efe2c22a5b42bc9)] -> css selector: a[title='My Account']]
+2023-01-07 21:12:09 INFO  WebdriverEvents:108 - clicked on[[ChromeDriver: chrome on WINDOWS (495e0634afee787a9efe2c22a5b42bc9)] -> css selector: a[title='My Account']]
+2023-01-07 21:12:09 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: ul.dropdown-menu li:last-of-type a
+2023-01-07 21:12:09 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: ul.dropdown-menu li:last-of-type a
+2023-01-07 21:12:09 INFO  WebdriverEvents:102 - clicking on[[ChromeDriver: chrome on WINDOWS (495e0634afee787a9efe2c22a5b42bc9)] -> css selector: ul.dropdown-menu li:last-of-type a]
+2023-01-07 21:12:10 INFO  WebdriverEvents:108 - clicked on[[ChromeDriver: chrome on WINDOWS (495e0634afee787a9efe2c22a5b42bc9)] -> css selector: ul.dropdown-menu li:last-of-type a]
+2023-01-07 21:12:10 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: form div.form-group:first-of-type input
+2023-01-07 21:12:10 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: form div.form-group:first-of-type input
+2023-01-07 21:12:10 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: form div.form-group:last-of-type input
+2023-01-07 21:12:10 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: form div.form-group:last-of-type input
+2023-01-07 21:12:10 INFO  WebdriverEvents:90 - Finding elementBy.cssSelector: input[type='submit']
+2023-01-07 21:12:10 INFO  WebdriverEvents:96 - Elelement FoundBy.cssSelector: input[type='submit']
+2023-01-07 21:12:11 INFO  WebdriverEvents:90 - Finding elementBy.xpath: //h2[text()='My Account']
+2023-01-07 21:12:11 INFO  WebdriverEvents:96 - Elelement FoundBy.xpath: //h2[text()='My Account']
+2023-01-07 21:12:11 INFO  WebdriverEvents:168 - getting text from [[ChromeDriver: chrome on WINDOWS (495e0634afee787a9efe2c22a5b42bc9)] -> xpath: //h2[text()='My Account']]
+2023-01-07 21:12:11 INFO  WebdriverEvents:174 - Got text from [[ChromeDriver: chrome on WINDOWS (495e0634afee787a9efe2c22a5b42bc9)] -> xpath: //h2[text()='My Account']]
+2023-01-07 21:12:11 INFO  CustomListener:24 - Test execution has passed for : verifyUserLogin

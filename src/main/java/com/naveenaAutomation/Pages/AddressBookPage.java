@@ -24,10 +24,10 @@ public class AddressBookPage extends TestBase {
 
 	@FindBy(css = "input[type='Submit']")
 	WebElement continueButton;
-	
+
 	@FindBy(css = "#input-country")
 	WebElement countryDropDownMenu;
-	
+
 	@FindBy(css = "#input-zone")
 	WebElement stateDropDownMenu;
 
@@ -39,16 +39,12 @@ public class AddressBookPage extends TestBase {
 			List<WebElement> cells = rowsInTable.get(i).findElements(By.cssSelector("td"));
 
 			String[] addressArray = cells.get(0).getText().split(" |\n");
-
 			for (int j = 0; j < addressArray.length; j++) {
 				if (addressArray[j].equalsIgnoreCase(key)) {
 					return cells.get(1);
 				}
-
 			}
-
 		}
-
 		System.out.println("Column name was not found!!!");
 		return null;
 	}
@@ -57,7 +53,7 @@ public class AddressBookPage extends TestBase {
 		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//a[text()='New Address']"))));
 		getElementFromTheTable(key).findElement(locator).click();
 	}
-	
+
 	public void fieldToBeDeleted(String key, By locator) {
 		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//a[text()='New Address']"))));
 		getElementFromTheTable(key).findElement(locator).click();
@@ -74,12 +70,12 @@ public class AddressBookPage extends TestBase {
 		companyField.sendKeys(address);
 		clickContinueBtn();
 	}
-	
+
 	private void selectByVisibleText(String text, WebElement element) {
 		Select sc = new Select(element);
 		sc.selectByVisibleText(text);
 	}
-	
+
 	public void changeCountry(String text) {
 		selectByVisibleText(text, countryDropDownMenu);
 	}
@@ -87,9 +83,10 @@ public class AddressBookPage extends TestBase {
 	public void changeState(String text) {
 		selectByVisibleText(text, stateDropDownMenu);
 	}
-	
+
 	private void acceptAlert() {
-		driver.switchTo().alert().accept();;
+		driver.switchTo().alert().accept();
+		;
 	}
 
 	public String getSuccessBannerText() {

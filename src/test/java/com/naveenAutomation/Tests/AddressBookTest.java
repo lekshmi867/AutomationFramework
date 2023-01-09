@@ -27,20 +27,25 @@ public class AddressBookTest extends TestBase {
 	}
 
 	@Test
-	public void VerifyUserIsAbleToDeleteAddressFromAddressHistory() {
-		AddressBookPage addressHistoryBook= myAccountPage.clickAddressHistory();
-		addressHistoryBook.fieldToBeEdited("L6W3C7",By.cssSelector("a"));
-		addressHistoryBook.changeCountry("Canada");
-		addressHistoryBook.changeState("Alberta");
-		addressHistoryBook.changeCompany("infosys");
-		sf.assertEquals(addressHistoryBook.getSuccessBannerText(),"Your address has been successfully updated", "Message Not Valid");
-		addressHistoryBook.fieldToBeDeleted("L6W5T1",By.cssSelector("a:last-of-type"));
-		sf.assertEquals(addressHistoryBook.getSuccessBannerText(),"Your address has been successfully deleted", "Message Not Valid");
+	public void VerifyUserIsAbleToEditAddressFromAddressBook() {
+		AddressBookPage addressBookPage= myAccountPage.clickAddressHistory();
+		addressBookPage.fieldToBeEdited("L6W3C7",By.cssSelector("a"));
+		addressBookPage.changeCountry("Canada");
+		addressBookPage.changeState("Alberta");
+		addressBookPage.changeCompany("infosys");
+		sf.assertEquals(addressBookPage.getSuccessBannerText(),"Your address has been successfully updated", "Message Not Valid");
+		sf.assertAll();
+	}
+	
+	public void VerifyUserIsAbleToDeleteAddressFromAddressBook() {
+		AddressBookPage addressBookPage= myAccountPage.clickAddressHistory();
+		addressBookPage.fieldToBeDeleted("L6W5T1",By.cssSelector("a:last-of-type"));
+		sf.assertEquals(addressBookPage.getSuccessBannerText(),"Your address has been successfully deleted", "Message Not Valid");
 		sf.assertAll();
 	}
 
 	@AfterMethod
 	public void teardown() {
-		//quitBrowser();
+		quitBrowser();
 	}
 }

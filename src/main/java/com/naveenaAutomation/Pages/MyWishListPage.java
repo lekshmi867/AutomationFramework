@@ -41,12 +41,9 @@ public class MyWishListPage extends TestBase{
 		System.out.println("Column name was not found!!!");
 		return null;
 	}
-	public WebElement getElementToBeDeleted(WebElement deleteElementColumn) {
-		return deleteElementColumn.findElement(By.cssSelector("a"));
-	}
 	
 	public void clickItemToBeDeletedFromwishList(WebElement elementToBeDeleted) {
-		action.moveToElement(getElementToBeDeleted(elementToBeDeleted)).click().perform();
+		elementToBeDeleted.findElement(By.cssSelector("a")).click();
 	}
 	
 	public String getTitleFromPage() {
@@ -60,7 +57,11 @@ public class MyWishListPage extends TestBase{
 				.findElements(By.cssSelector("table[class='table table-bordered table-hover'] thead tr td"));
 		
 		
-		int columnIndex =  headers.stream().filter(h->h.getText().equals(column.getName())).findAny().map(h->headers.indexOf(h)).orElse(-1);
+		int columnIndex =  headers.stream()
+				.filter(h->h.getText()
+				.equals(column.getName()))
+				.findAny()
+				.map(h->headers.indexOf(h)).orElse(-1);
 		return columnIndex;
 		
 	}
@@ -83,8 +84,11 @@ public class MyWishListPage extends TestBase{
 		String name;
 
 		private WishList(String name) {
+			
 			this.name = name;
 		}
+
+
 
 		public String getName() {
 			return name;

@@ -50,7 +50,13 @@ public class MyAccountTest extends TestBase {
 		Assert.assertEquals(myAccountPage.getAccountUpdateeSuccessMessage(),"Success: Your newsletter subscription has been successfully updated!");
 
 	}
-
+	
+	@Test
+	public void testSomething() {
+		verifyLogin();
+		Assert.assertEquals(myAccountPage.getMyAccountText(), "Account", "Login Failed");
+	}
+	
 	@AfterMethod
 	public void teardown() {
 		quitBrowser();
