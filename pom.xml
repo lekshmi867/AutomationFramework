@@ -24,7 +24,7 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>7.3.0</version>
+			<version>7.5</version>
 			<scope>compile</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
@@ -43,6 +43,28 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.11</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>5.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.17</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.17</version>
+		</dependency>
+
+
 	</dependencies>
 	<build>
 		<pluginManagement>

@@ -46,9 +46,9 @@ public class MyAccountPage extends TestBase {
 		return myAccountText.getText();
 	}
 	
-	public MyAcccountInformationPage clickEditYourAccountInfo() {
+	public MyAccountInformationPage clickEditYourAccountInfo() {
 		editYourAccountInfo.click();
-		return new MyAcccountInformationPage();
+		return new MyAccountInformationPage();
 	}
 	
 	public String getAccountUpdateeSuccessMessage() {
@@ -67,9 +67,8 @@ public class MyAccountPage extends TestBase {
 	
 	public AddressBookPage clickAddressHistory() {
 		addressHistoryIcon.click();
-		return new AddressBookPage();
-		
+		return new AddressBookPage();	
 	}
-
+	
 	
 }

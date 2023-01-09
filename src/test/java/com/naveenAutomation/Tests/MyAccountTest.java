@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.naveenaAutomation.Pages.AccountLoginPage;
-import com.naveenaAutomation.Pages.MyAcccountInformationPage;
+import com.naveenaAutomation.Pages.MyAccountInformationPage;
 import com.naveenaAutomation.Pages.MyAccountPage;
 import com.naveenaAutomation.Pages.NewsLetterSubscriptionPage;
 import com.naveenaAutomation.Pages.StorePage;
@@ -16,7 +16,7 @@ public class MyAccountTest extends TestBase {
 	AccountLoginPage accountLoginPage;
 	MyAccountPage myAccountPage;
 	StorePage storePage;
-	MyAcccountInformationPage myAccountInformationPage;
+	MyAccountInformationPage myAccountInformationPage;
 	NewsLetterSubscriptionPage newsLetterSubscriptionPage;
 
 	@BeforeMethod
