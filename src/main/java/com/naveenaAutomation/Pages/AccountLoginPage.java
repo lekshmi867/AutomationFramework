@@ -14,13 +14,13 @@ public class AccountLoginPage extends TestBase {
 	}
 	
 	@FindBy(css = "form div.form-group:first-of-type input")
-	WebElement emailInputField;
+	private WebElement emailInputField;
 
 	@FindBy(css = "form div.form-group:last-of-type input")
-	WebElement passwordInputField;
+	private WebElement passwordInputField;
 
 	@FindBy(css = "input[type='submit']")
-	WebElement loginBtn;
+	private WebElement loginBtn;
 	
 	private void enterEmailInputField(String email) {
 		emailInputField.sendKeys(email);

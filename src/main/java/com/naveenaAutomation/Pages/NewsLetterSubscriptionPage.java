@@ -13,13 +13,13 @@ public class NewsLetterSubscriptionPage extends TestBase {
 	}
 	
 	@FindBy(xpath="//input[@value='1']")
-	WebElement subscribeYesRadioBtn;
+	private WebElement subscribeYesRadioBtn;
 	
 	@FindBy(xpath="//input[@value='0']")
-	WebElement subscribeNoRadioBtn;
+	private WebElement subscribeNoRadioBtn;
 	
 	@FindBy(xpath="//input[@value='Continue']")
-	WebElement continueBtn;
+	private WebElement continueBtn;
 	
 	public void clickSubscribeOption(String option) {
 		if(option.equalsIgnoreCase("yes")){

@@ -12,28 +12,28 @@ public class MyAccountPage extends TestBase {
 	}
 
 	@FindBy(xpath = "//h2[text()='My Account']")
-	WebElement myAccountText;
+	private WebElement myAccountText;
 	
 	@FindBy(xpath = "//a[text()='Edit your account information']")
-	WebElement editYourAccountInfo;
+	private WebElement editYourAccountInfo;
 	
 	@FindBy(css = "div.alert-success")
-	WebElement accountUpdateSuccessBanner;
+	private WebElement accountUpdateSuccessBanner;
 	
 	@FindBy(xpath="//a[contains(text(),'Subscribe')]")
-	WebElement subscribeNewsletterLink;
+	private WebElement subscribeNewsletterLink;
 	
 	@FindBy(css="div.list-group a:last-of-type")
-	WebElement logoutLink;
+	private WebElement logoutLink;
 	
 	@FindBy(xpath="//a[text()='Laptops & Notebooks']")
-	WebElement laptopMousehover;
+	private WebElement laptopMousehover;
 	
 	@FindBy(xpath="//a[text()='Show All Laptops & Notebooks']")
-	WebElement showAllLaptopLink;
+	private WebElement showAllLaptopLink;
 	
 	@FindBy(css="div.list-group a:nth-of-type(4)")
-	WebElement addressHistoryIcon;
+	private WebElement addressHistoryIcon;
 	
 	
 	public LaptopNotebookPage clickShowAllLaptopLink() {

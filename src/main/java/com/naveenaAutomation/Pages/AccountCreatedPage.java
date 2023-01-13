@@ -12,7 +12,7 @@ public class AccountCreatedPage extends TestBase{
 	}
 
 	@FindBy(css = "#content h1")
-	WebElement accountCreationSuccessTxt;
+	private WebElement accountCreationSuccessTxt;
 
 	public String getSuccessAccountCreatedTxt() {
 		return accountCreationSuccessTxt.getText();

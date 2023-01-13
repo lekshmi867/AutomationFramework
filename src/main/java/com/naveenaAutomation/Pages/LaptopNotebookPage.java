@@ -15,25 +15,25 @@ public class LaptopNotebookPage extends TestBase {
 	}
 
 	@FindBy(xpath = "//h2[text()='Laptops & Notebooks']")
-	WebElement laptopNotebookText;
+	private WebElement laptopNotebookText;
 
 	@FindBy(css = "#input-sort")
-	WebElement selectFromDropDownMenu;
+	private WebElement selectFromDropDownMenu;
 
 	@FindBy(css = "#content div.row:nth-of-type(4)>div:first-of-type div:nth-of-type(2) div:nth-of-type(2) button:nth-of-type(2)")
-	WebElement sonyVaioWishlistIcon;
+	private WebElement sonyVaioWishlistIcon;
 
 	@FindBy(css = "#content div.row:nth-of-type(4)>div:nth-of-type(2) div:nth-of-type(2) div:nth-of-type(2) button:nth-of-type(2) i")
-	WebElement MacBookProWishlistIcon;
+	private WebElement MacBookProWishlistIcon;
 
 	@FindBy(css = "#content div.row:nth-of-type(4)>div:nth-of-type(3) div:nth-of-type(2) div:nth-of-type(2) button:nth-of-type(2)")
-	WebElement MacBookAirWishlistIcon;
+	private WebElement MacBookAirWishlistIcon;
 
 	@FindBy(css = "#wishlist-total")
-	WebElement wishlistLink;
+	private WebElement wishlistLink;
 
 	@FindBy(css = "div.alert.alert-success.alert-dismissible")
-	WebElement successBanner;
+	private WebElement successBanner;
 
 	public String getLaptopNotebbokText() {
 		return laptopNotebookText.getText();

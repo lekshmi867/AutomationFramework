@@ -20,7 +20,7 @@ public class MyWishListPage extends TestBase{
 
 
 	@FindBy(css="div.alert-success")
-	WebElement successBanner;
+	private WebElement successBanner;
 	
 	public WebElement getElementFromTheTable(String productName, WishList column) {
 
@@ -52,7 +52,7 @@ public class MyWishListPage extends TestBase{
 	}
 	
 	
-	public int getIndexForColumn(WishList column) {
+	private int getIndexForColumn(WishList column) {
 		List<WebElement> headers = driver
 				.findElements(By.cssSelector("table[class='table table-bordered table-hover'] thead tr td"));
 		

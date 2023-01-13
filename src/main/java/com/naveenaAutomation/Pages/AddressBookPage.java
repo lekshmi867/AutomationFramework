@@ -17,19 +17,19 @@ public class AddressBookPage extends TestBase {
 	}
 
 	@FindBy(css = "div.alert-success")
-	WebElement successBanner;
+	private WebElement successBanner;
 
 	@FindBy(css = "#input-company")
-	WebElement companyField;
+	private WebElement companyField;
 
 	@FindBy(css = "input[type='Submit']")
-	WebElement continueButton;
+	private WebElement continueButton;
 
 	@FindBy(css = "#input-country")
-	WebElement countryDropDownMenu;
+	private WebElement countryDropDownMenu;
 
 	@FindBy(css = "#input-zone")
-	WebElement stateDropDownMenu;
+	private WebElement stateDropDownMenu;
 
 	private WebElement getElementFromTheTable(String key) {
 

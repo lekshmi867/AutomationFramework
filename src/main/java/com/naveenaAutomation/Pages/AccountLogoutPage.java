@@ -13,10 +13,10 @@ public class AccountLogoutPage extends TestBase {
 	}
 	
 	@FindBy(xpath="//h1[text()='Account Logout']")
-	WebElement accountLogoutText;
+	private WebElement accountLogoutText;
 	
 	@FindBy(xpath="//a[text()='Continue']")
-	WebElement continueBtn;
+	private WebElement continueBtn;
 
 	public String getAccountLogoutText() {
 		return accountLogoutText.getText();

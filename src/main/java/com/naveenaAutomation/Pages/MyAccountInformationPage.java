@@ -12,19 +12,19 @@ public class MyAccountInformationPage extends TestBase {
 		PageFactory.initElements(driver, this);
 	}
 	@FindBy(css="#input-firstname")
-	WebElement firstNameField;
+	private WebElement firstNameField;
 	
 	@FindBy(css="#input-lastname")
-	WebElement lastNameField;
+	private WebElement lastNameField;
 	
 	@FindBy(css="#input-email")
-	WebElement emailField;
+	private WebElement emailField;
 	
 	@FindBy(css="#input-telephone")
-	WebElement phoneNumberField;
+	private WebElement phoneNumberField;
 	
 	@FindBy(xpath = "//input[@value='Continue']")
-	WebElement continueBtn;
+	private WebElement continueBtn;
 	
 	public void changePhoneNumber(String number) {
 		phoneNumberField.clear();

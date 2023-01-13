@@ -12,28 +12,28 @@ public class RegisterAccountPage extends TestBase {
 	}
 
 	@FindBy(id = "input-firstname")
-	WebElement fName;
+	private WebElement fName;
 
 	@FindBy(id = "input-lastname")
-	WebElement lName;
+	private WebElement lName;
 
 	@FindBy(id = "input-email")
-	WebElement email;
+	private WebElement email;
 
 	@FindBy(id = "input-telephone")
-	WebElement telephone;
+	private WebElement telephone;
 
 	@FindBy(id = "input-password")
-	WebElement password;
+	private WebElement password;
 
 	@FindBy(id = "input-confirm")
-	WebElement confirmPassword;
+	private WebElement confirmPassword;
 
 	@FindBy(xpath = "//input[@type='checkbox']")
-	WebElement privacyPolicyCheckBox;
+	private WebElement privacyPolicyCheckBox;
 
 	@FindBy(xpath = "//input[@type='submit']")
-	WebElement continueBtn;
+	private WebElement continueBtn;
 
 	private void enterFirstName(String fname) {
 		fName.sendKeys(fname);

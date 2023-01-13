@@ -18,7 +18,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class ExtentReportListener extends TestListenerAdapter {
 
-	public ExtentSparkReporter htmlReporter;
+	public ExtentSparkReporter sparkReporter;
 	public ExtentTest test;
 	public ExtentReports extent;
 
@@ -30,22 +30,22 @@ public class ExtentReportListener extends TestListenerAdapter {
 		String repName = "Extent_Report_" + timeStamp + ".html";
 
 		// Defines the location of extent report
-		htmlReporter = new ExtentSparkReporter("./Extent Report/" + repName);
+		sparkReporter = new ExtentSparkReporter("./Extent Report/" + repName);
 
 		// Loading the config XML
 		try {
-			htmlReporter.loadXMLConfig("./extent-config.xml");
+			sparkReporter.loadXMLConfig("./extent-config.xml");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		htmlReporter.config().setReportName("Regression Suite");
-		htmlReporter.config().setTheme(Theme.STANDARD);
+		sparkReporter.config().setReportName("Regression Suite");
+		sparkReporter.config().setTheme(Theme.STANDARD);
 
 		extent = new ExtentReports();
 
-		extent.attachReporter(htmlReporter);
+		extent.attachReporter(sparkReporter);
 
 		extent.setSystemInfo("Name of the host", "Localhost");
 		extent.setSystemInfo("Tester Name", "Lekshmi");

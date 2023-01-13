@@ -14,13 +14,13 @@ public class StorePage extends TestBase{
 	}
 	
 	@FindBy(css= "a[title='My Account']")
-	WebElement myaccount;
+	private WebElement myaccount;
 	
 	@FindBy(css="ul.dropdown-menu li:first-of-type a")
-	WebElement register;
+	private WebElement register;
 	
 	@FindBy(css="ul.dropdown-menu li:last-of-type a")
-	WebElement login;
+	private WebElement login;
 	
 	
 	private void clickMyAccountDropDown() {
