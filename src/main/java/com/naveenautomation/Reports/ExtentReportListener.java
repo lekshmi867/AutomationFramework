@@ -50,7 +50,7 @@ public class ExtentReportListener extends TestListenerAdapter {
 		extent.setSystemInfo("Name of the host", "Localhost");
 		extent.setSystemInfo("Tester Name", "Lekshmi");
 		extent.setSystemInfo("Env", "Prod");
-		
+
 	}
 
 	@Override
@@ -70,10 +70,12 @@ public class ExtentReportListener extends TestListenerAdapter {
 		test = extent.createTest(tr.getName());
 		test.log(Status.SKIP, MarkupHelper.createLabel(tr.getName(), ExtentColor.ORANGE));
 	}
-	
+
 	@Override
 	public void onFinish(ITestContext testContext) {
 		extent.flush();
 	}
+
+
 
 }
