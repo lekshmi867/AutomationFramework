@@ -23,7 +23,7 @@ public class MyWishListTest extends TestBase {
 	@BeforeMethod
 	public void setUp() {
 		launchBrowser();
-		storePage = new StorePage();
+		storePage = new StorePage(driver,true).get();
 		accountLoginPage =storePage.clickLoginLink();
 		myAccountPage = accountLoginPage.login("lekshmiv123@gmail.com", "Password1");	
 	}

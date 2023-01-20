@@ -3,30 +3,29 @@ package com.naveenaAutomation.Pages;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import com.naveenautomation.Base.TestBase;
+import com.naveenautomation.Browsers.ProxyDriver;
 
 
 
-public class MyWishListPage extends TestBase{
+public class MyWishListPage extends Page{
+	private static final String PAGE_URL="account/wishlist";
 	
-	public MyWishListPage() {
-		PageFactory.initElements(driver, this);
+
+	public MyWishListPage(WebDriver wd, boolean waitForPageToLoad) {
+		super(wd, waitForPageToLoad);
+		
 	}
 
-
-	@FindBy(css="div.alert-success")
-	private WebElement successBanner;
+	private static final By successBanner=By.cssSelector("div.alert-success");
 	
 	public WebElement getElementFromTheTable(String productName, WishList column) {
 
 		int columnIndex = getIndexForColumn(column);
 
-		List<WebElement> rowsInTable = driver
+		List<WebElement> rowsInTable = wd
 				.findElements(By.cssSelector("table[class='table table-bordered table-hover'] tbody tr "));
 		for (int i = 0; i < rowsInTable.size(); i++) {
 			List<WebElement> cells = rowsInTable.get(i).findElements(By.cssSelector("td"));
@@ -43,17 +42,21 @@ public class MyWishListPage extends TestBase{
 	}
 	
 	public void clickItemToBeDeletedFromwishList(WebElement elementToBeDeleted) {
+	
 		elementToBeDeleted.findElement(By.cssSelector("a")).click();
+	
+		
+		
 	}
 	
 	public String getTitleFromPage() {
-		wait.until(ExpectedConditions.titleIs("My Wish List"));
-		return driver.getTitle();
+		//wait.until(ExpectedConditions.titleIs("My Wish List"));
+		return ((ProxyDriver)wd).getTitle();
 	}
 	
 	
 	private int getIndexForColumn(WishList column) {
-		List<WebElement> headers = driver
+		List<WebElement> headers = wd
 				.findElements(By.cssSelector("table[class='table table-bordered table-hover'] thead tr td"));
 		
 		
@@ -68,7 +71,7 @@ public class MyWishListPage extends TestBase{
 	
 	
 	public String getSuccessBannerText() {
-		return successBanner.getText();
+		return ((ProxyDriver)wd).getText(successBanner);
 	}
 
 	public enum WishList {
@@ -93,5 +96,18 @@ public class MyWishListPage extends TestBase{
 		public String getName() {
 			return name;
 		}
+	}
+
+	@Override
+	protected void isLoaded() {
+
+		if(!urlContains(wd.getCurrentUrl())) {
+			throw new Error();
+		}
+	}
+	
+	@Override
+	protected String getPageUrl() {
+		return getDomain() + PAGE_URL;
 	}
 }

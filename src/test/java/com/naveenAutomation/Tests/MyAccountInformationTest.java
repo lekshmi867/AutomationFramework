@@ -25,7 +25,7 @@ public class MyAccountInformationTest extends TestBase {
 	@BeforeMethod
 	public void setUp() {
 		launchBrowser();
-		storePage = new StorePage();
+		storePage = new StorePage(driver,true).get();
 		}
 
 	@Test(dataProvider = "LoginDataProvider")

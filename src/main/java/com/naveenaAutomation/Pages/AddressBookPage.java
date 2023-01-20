@@ -3,37 +3,31 @@ package com.naveenaAutomation.Pages;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 
-import com.naveenautomation.Base.TestBase;
+import com.naveenautomation.Browsers.ProxyDriver;
 
-public class AddressBookPage extends TestBase {
-	public AddressBookPage() {
-		PageFactory.initElements(driver, this);
+public class AddressBookPage extends Page {
+
+	private static final String PAGE_URL="account/address";
+	public AddressBookPage(WebDriver wd, boolean waitForPageToLoad) {
+		super(wd, waitForPageToLoad);
 	}
 
-	@FindBy(css = "div.alert-success")
-	private WebElement successBanner;
+	private static final By successBanner = By.cssSelector("div.alert-success");
 
-	@FindBy(css = "#input-company")
-	private WebElement companyField;
+	private static final By companyField = By.cssSelector("#input-company");
 
-	@FindBy(css = "input[type='Submit']")
-	private WebElement continueButton;
+	private static final By continueButton = By.cssSelector("input[type='Submit']");
 
-	@FindBy(css = "#input-country")
-	private WebElement countryDropDownMenu;
+	private static final By countryDropDownMenu = By.cssSelector("#input-country");
 
-	@FindBy(css = "#input-zone")
-	private WebElement stateDropDownMenu;
+	private static final By stateDropDownMenu = By.cssSelector("#input-zone");
 
 	private WebElement getElementFromTheTable(String key) {
 
-		List<WebElement> rowsInTable = driver
+		List<WebElement> rowsInTable = wd
 				.findElements(By.cssSelector("table[class='table table-bordered table-hover'] tbody tr "));
 		for (int i = 0; i < rowsInTable.size(); i++) {
 			List<WebElement> cells = rowsInTable.get(i).findElements(By.cssSelector("td"));
@@ -50,47 +44,55 @@ public class AddressBookPage extends TestBase {
 	}
 
 	public void fieldToBeEdited(String key, By locator) {
-		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//a[text()='New Address']"))));
-		getElementFromTheTable(key).findElement(locator).click();
+		// wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//a[text()='New
+		// Address']"))));
+		// getElementFromTheTable(key).findElement(locator).click();
+		((ProxyDriver) wd).click(getElementFromTheTable(key).findElement(locator));
+
 	}
 
 	public void fieldToBeDeleted(String key, By locator) {
-		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//a[text()='New Address']"))));
-		getElementFromTheTable(key).findElement(locator).click();
-		acceptAlert();
+		// wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//a[text()='New
+		// Address']"))));
+		// getElementFromTheTable(key).findElement(locator).click();
+		((ProxyDriver) wd).click(getElementFromTheTable(key).findElement(locator));
+		((ProxyDriver) wd).acceptAlert();
 	}
 
 	private void clickContinueBtn() {
-		continueButton.submit();
+		((ProxyDriver) wd).submit(continueButton);
 	}
 
 	public void changeCompany(String address) {
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[type='submit']")));
-		companyField.clear();
-		companyField.sendKeys(address);
+		((ProxyDriver) wd).clear(companyField);
+		((ProxyDriver) wd).sendKeys(companyField, address);
 		clickContinueBtn();
 	}
 
-	private void selectByVisibleText(String text, WebElement element) {
-		Select sc = new Select(element);
-		sc.selectByVisibleText(text);
-	}
-
 	public void changeCountry(String text) {
-		selectByVisibleText(text, countryDropDownMenu);
+		((ProxyDriver) wd).selectFromDropDown(countryDropDownMenu, text);
 	}
 
 	public void changeState(String text) {
-		selectByVisibleText(text, stateDropDownMenu);
+		((ProxyDriver) wd).selectFromDropDown(stateDropDownMenu, text);
 	}
 
-	private void acceptAlert() {
-		driver.switchTo().alert().accept();
-		;
-	}
 
 	public String getSuccessBannerText() {
-		return successBanner.getText();
+		return ((ProxyDriver) wd).getText(successBanner);
+	}
+
+	@Override
+	protected void isLoaded() {
+
+		if(!urlContains(wd.getCurrentUrl())) {
+			throw new Error();
+		}
+	}
+	
+	@Override
+	protected String getPageUrl() {
+		return getDomain() + PAGE_URL;
 	}
 
 }

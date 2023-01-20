@@ -1,42 +1,58 @@
 package com.naveenaAutomation.Pages;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
-import com.naveenautomation.Base.TestBase;
+import com.naveenautomation.Browsers.ProxyDriver;
 
-public class StorePage extends TestBase{
+public class StorePage extends Page{
+	
+	public static final String PAGE_URL="common/home";
 
+	public StorePage(WebDriver wd, boolean waitForPageToLoad) {
+		super(wd, waitForPageToLoad);
 
-	public StorePage() {
-		PageFactory.initElements(driver, this);
 	}
+
+	private static final By myaccount=By.cssSelector("a[title='My Account']");
 	
-	@FindBy(css= "a[title='My Account']")
-	private WebElement myaccount;
+	private static final By register=By.cssSelector("ul.dropdown-menu li:first-of-type a");
 	
-	@FindBy(css="ul.dropdown-menu li:first-of-type a")
-	private WebElement register;
-	
-	@FindBy(css="ul.dropdown-menu li:last-of-type a")
-	private WebElement login;
+	private static final By login=By.cssSelector("ul.dropdown-menu li:last-of-type a");
 	
 	
 	private void clickMyAccountDropDown() {
-		myaccount.click();
+		((ProxyDriver)wd).click(myaccount);
 	}
 	
 	public RegisterAccountPage clickRegisterLink() {
 		clickMyAccountDropDown();
-		register.click();
-		return new RegisterAccountPage();
+		((ProxyDriver)wd).click(register);
+		return new RegisterAccountPage(wd,true);
 	}
 	
 	public AccountLoginPage clickLoginLink() {
 		clickMyAccountDropDown();
-		login.click();
-		return new AccountLoginPage();
+		((ProxyDriver)wd).click(login);
+		return new AccountLoginPage(wd,true);
+	}
+
+	@Override
+	protected void isLoaded() {
+
+		if(!urlContains(wd.getCurrentUrl())) {
+			throw new Error();
+		}
+	}
+	
+	@Override
+	protected String getPageUrl() {
+		return getDomain() + PAGE_URL;
+	}
+	
+	@Override
+	public StorePage get() {
+		return (StorePage)super.get();
 	}
 
 }

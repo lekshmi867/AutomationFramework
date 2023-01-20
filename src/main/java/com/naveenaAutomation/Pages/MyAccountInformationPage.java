@@ -1,54 +1,63 @@
 package com.naveenaAutomation.Pages;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
-import com.naveenautomation.Base.TestBase;
+import com.naveenautomation.Browsers.ProxyDriver;
 
-public class MyAccountInformationPage extends TestBase {
+public class MyAccountInformationPage extends Page {
 
-	public MyAccountInformationPage() {
-		PageFactory.initElements(driver, this);
+	
+	private static final String PAGE_URL="account/edit";
+	public MyAccountInformationPage(WebDriver wd, boolean waitForPageToLoad) {
+		super(wd, waitForPageToLoad);
 	}
-	@FindBy(css="#input-firstname")
-	private WebElement firstNameField;
+	private static final By firstNameField=By.cssSelector("#input-firstname");
 	
-	@FindBy(css="#input-lastname")
-	private WebElement lastNameField;
+	private static final By lastNameField=By.cssSelector("#input-lastname");
 	
-	@FindBy(css="#input-email")
-	private WebElement emailField;
+	private static final By emailField=By.cssSelector("#input-email");
 	
-	@FindBy(css="#input-telephone")
-	private WebElement phoneNumberField;
+	private static final By phoneNumberField=By.cssSelector("#input-telephone");
 	
-	@FindBy(xpath = "//input[@value='Continue']")
-	private WebElement continueBtn;
+	private static final By continueBtn=By.xpath( "//input[@value='Continue']");
 	
 	public void changePhoneNumber(String number) {
-		phoneNumberField.clear();
-		phoneNumberField.sendKeys(number);
+		((ProxyDriver)wd).clear(phoneNumberField);
+		((ProxyDriver)wd).sendKeys(phoneNumberField, number);
 	}
 	
 	public String getFirstName() {
-		return firstNameField.getAttribute("value");
+		return ((ProxyDriver)wd).getAttribute(firstNameField, "value");
 	}
 	
 	public String getLastName() {
-		return lastNameField.getAttribute("value");
+		return ((ProxyDriver)wd).getAttribute(lastNameField, "value");
 	}
 	
 	public String getEmail() {
-		return emailField.getAttribute("value");
+		return ((ProxyDriver)wd).getAttribute(emailField, "value");
 	}
 	
 	public String getPhoneNumber() {
-		return phoneNumberField.getAttribute("value");
+		return ((ProxyDriver)wd).getAttribute(phoneNumberField, "value");
 	}
 	public MyAccountPage clickContinueBtn() {
-		continueBtn.click();
-		return new MyAccountPage();
+		((ProxyDriver)wd).click(continueBtn);
+		return new MyAccountPage(wd,true);
+	}
+
+	@Override
+	protected void isLoaded() {
+
+		if(!urlContains(wd.getCurrentUrl())) {
+			throw new Error();
+		}
+	}
+	
+	@Override
+	protected String getPageUrl() {
+		return getDomain() + PAGE_URL;
 	}
 	
 }

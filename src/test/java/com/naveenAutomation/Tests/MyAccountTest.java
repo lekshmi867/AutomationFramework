@@ -22,7 +22,7 @@ public class MyAccountTest extends TestBase {
 	@BeforeMethod
 	public void setUp() {
 		launchBrowser();
-		storePage = new StorePage();
+		storePage = new StorePage(driver,true).get();
 		}
 
 	@Test

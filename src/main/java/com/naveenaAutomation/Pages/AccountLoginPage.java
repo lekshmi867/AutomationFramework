@@ -1,40 +1,61 @@
 package com.naveenaAutomation.Pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
 import com.naveenautomation.Base.TestBase;
+import com.naveenautomation.Browsers.ProxyDriver;
 
-public class AccountLoginPage extends TestBase {
+public class AccountLoginPage extends Page {
 
-	public AccountLoginPage() {
-		PageFactory.initElements(driver, this);
-	}
+	private static final String PAGE_URL="account/login";
 	
-	@FindBy(css = "form div.form-group:first-of-type input")
-	private WebElement emailInputField;
+	public AccountLoginPage(WebDriver wd, boolean waitForPageToLoad) {
+		super(wd, waitForPageToLoad);
+		
+	}
 
-	@FindBy(css = "form div.form-group:last-of-type input")
-	private WebElement passwordInputField;
+	private static final By emailInputField=By.cssSelector("form div.form-group:first-of-type input");
 
-	@FindBy(css = "input[type='submit']")
-	private WebElement loginBtn;
+	private static final By passwordInputField=By.cssSelector("form div.form-group:last-of-type input");
+
+	private static final By loginBtn=By.cssSelector("input[type='submit']");
 	
 	private void enterEmailInputField(String email) {
-		emailInputField.sendKeys(email);
+		((ProxyDriver) wd).sendKeys(emailInputField, email);
 	}
 
 	private void enterPasswordInputField(String password) {
-		passwordInputField.sendKeys(password);
+		((ProxyDriver) wd).sendKeys(passwordInputField, password);
 	}
 
 	public MyAccountPage login(String email, String password) {
 		enterEmailInputField(email);
 		enterPasswordInputField(password);
-		loginBtn.submit();
-		return new MyAccountPage();
+		((ProxyDriver)wd).submit(loginBtn);
+		return new MyAccountPage(wd,true);
 
+	}
+
+	@Override
+	protected void isLoaded() {
+
+		if(!urlContains(wd.getCurrentUrl())) {
+			throw new Error();
+		}
+	}
+	
+	@Override
+	protected String getPageUrl() {
+		return getDomain() + PAGE_URL;
+	}
+	
+	@Override
+	public AccountLoginPage get() {
+		return (AccountLoginPage)super.get();
 	}
 }

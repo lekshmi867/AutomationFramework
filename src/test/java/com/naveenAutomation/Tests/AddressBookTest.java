@@ -21,7 +21,7 @@ public class AddressBookTest extends TestBase {
 	@BeforeMethod
 	public void setUp() {
 		launchBrowser();
-		storePage = new StorePage();
+		storePage = new StorePage(driver,true).get();
 		accountLoginPage =storePage.clickLoginLink();
 		myAccountPage = accountLoginPage.login("lekshmiv123@gmail.com", "Password1");	
 	}
@@ -36,7 +36,7 @@ public class AddressBookTest extends TestBase {
 		sf.assertEquals(addressBookPage.getSuccessBannerText(),"Your address has been successfully updated", "Message Not Valid");
 		sf.assertAll();
 	}
-	
+	@Test
 	public void VerifyUserIsAbleToDeleteAddressFromAddressBook() {
 		AddressBookPage addressBookPage= myAccountPage.clickAddressHistory();
 		addressBookPage.fieldToBeDeleted("L6W5T1",By.cssSelector("a:last-of-type"));

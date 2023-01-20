@@ -1,39 +1,52 @@
 package com.naveenaAutomation.Pages;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
-import com.naveenautomation.Base.TestBase;
+import com.naveenautomation.Browsers.ProxyDriver;
 
-public class NewsLetterSubscriptionPage extends TestBase {
+public class NewsLetterSubscriptionPage extends Page {
 
-	public NewsLetterSubscriptionPage() {
-		PageFactory.initElements(driver, this);
+	private static final String PAGE_URL="account/newsletter";
+	
+	public NewsLetterSubscriptionPage(WebDriver wd, boolean waitForPageToLoad) {
+		super(wd, waitForPageToLoad);
+		
 	}
+
+
+	private static final By subscribeYesRadioBtn=By.xpath("//input[@value='1']");
 	
-	@FindBy(xpath="//input[@value='1']")
-	private WebElement subscribeYesRadioBtn;
+	private static final By subscribeNoRadioBtn=By.xpath("//input[@value='0']");
 	
-	@FindBy(xpath="//input[@value='0']")
-	private WebElement subscribeNoRadioBtn;
-	
-	@FindBy(xpath="//input[@value='Continue']")
-	private WebElement continueBtn;
+	private static final By continueBtn=By.xpath("//input[@value='Continue']");
 	
 	public void clickSubscribeOption(String option) {
 		if(option.equalsIgnoreCase("yes")){
-			subscribeYesRadioBtn.click();
+			((ProxyDriver)wd).click(subscribeYesRadioBtn);
 		}
 		else {
-			subscribeNoRadioBtn.click();
+			((ProxyDriver)wd).click(subscribeNoRadioBtn);
 		}
 		
 	}
 	
 	public MyAccountPage clickContinueBtn() {
-		continueBtn.click();
-		return new MyAccountPage();
+		((ProxyDriver)wd).click(continueBtn);
+		return new MyAccountPage(wd, true);
+	}
+
+	@Override
+	protected void isLoaded() {
+
+		if(!urlContains(wd.getCurrentUrl())) {
+			throw new Error();
+		}
+	}
+	
+	@Override
+	protected String getPageUrl() {
+		return getDomain() + PAGE_URL;
 	}
 
 }

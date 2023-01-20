@@ -1,78 +1,77 @@
 package com.naveenaAutomation.Pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.WebDriver;
 
-import com.naveenautomation.Base.TestBase;
+import com.naveenautomation.Browsers.ProxyDriver;
 
-public class LaptopNotebookPage extends TestBase {
-	public LaptopNotebookPage() {
-		PageFactory.initElements(driver, this);
+public class LaptopNotebookPage extends Page {
+
+	private static final String PAGE_URL="product/category&path=18";
+	public LaptopNotebookPage(WebDriver wd, boolean waitForPageToLoad) {
+		super(wd, waitForPageToLoad);
 	}
 
-	@FindBy(xpath = "//h2[text()='Laptops & Notebooks']")
-	private WebElement laptopNotebookText;
 
-	@FindBy(css = "#input-sort")
-	private WebElement selectFromDropDownMenu;
+	private static final By laptopNotebookText=By.xpath("//h2[text()='Laptops & Notebooks']");
 
-	@FindBy(css = "#content div.row:nth-of-type(4)>div:first-of-type div:nth-of-type(2) div:nth-of-type(2) button:nth-of-type(2)")
-	private WebElement sonyVaioWishlistIcon;
+	private static final By selectFromDropDownMenu=By.cssSelector("#input-sort");
 
-	@FindBy(css = "#content div.row:nth-of-type(4)>div:nth-of-type(2) div:nth-of-type(2) div:nth-of-type(2) button:nth-of-type(2) i")
-	private WebElement MacBookProWishlistIcon;
+	private static final By sonyVaioWishlistIcon=By.cssSelector("#content div.row:nth-of-type(4)>div:first-of-type div:nth-of-type(2) div:nth-of-type(2) button:nth-of-type(2)");
 
-	@FindBy(css = "#content div.row:nth-of-type(4)>div:nth-of-type(3) div:nth-of-type(2) div:nth-of-type(2) button:nth-of-type(2)")
-	private WebElement MacBookAirWishlistIcon;
+	private static final By MacBookProWishlistIcon=By.cssSelector("#content div.row:nth-of-type(4)>div:nth-of-type(2) div:nth-of-type(2) div:nth-of-type(2) button:nth-of-type(2) i");
 
-	@FindBy(css = "#wishlist-total")
-	private WebElement wishlistLink;
+	private static final By MacBookAirWishlistIcon=By.cssSelector("#content div.row:nth-of-type(4)>div:nth-of-type(3) div:nth-of-type(2) div:nth-of-type(2) button:nth-of-type(2)");
 
-	@FindBy(css = "div.alert.alert-success.alert-dismissible")
-	private WebElement successBanner;
+	private static final By wishlistLink=By.cssSelector("#wishlist-total");
+
+	private static final By successBanner=By.cssSelector("div.alert.alert-success.alert-dismissible");
 
 	public String getLaptopNotebbokText() {
-		return laptopNotebookText.getText();
+		return ((ProxyDriver)wd).getText(laptopNotebookText);
 
 	}
 
 	public void selectByVisibleText(String text) {
-		Select sc = new Select(selectFromDropDownMenu);
-		sc.selectByVisibleText(text);
+		//WebElement element =wd.findElement(selectFromDropDownMenu);
+		((ProxyDriver)wd).selectFromDropDown(selectFromDropDownMenu, text);
 	}
 
 	public void addSonyVaioToWishlist() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#content div.row:nth-of-type(4)>div:first-of-type div:nth-of-type(2) div:nth-of-type(2) button:nth-of-type(2)")));
-		sonyVaioWishlistIcon.click();
+		((ProxyDriver)wd).click(sonyVaioWishlistIcon);
 	}
 
 	public void addMacBookProToWishlist() {
-
-		driver.navigate().refresh();
-		wait.until(ExpectedConditions.elementToBeClickable(MacBookProWishlistIcon));
-		MacBookProWishlistIcon.click();
+		((ProxyDriver)wd).navigate().refresh();
+		((ProxyDriver)wd).click(MacBookProWishlistIcon);
 	}
 
 	public void addMacBookAirToWishlist() {
-		driver.navigate().refresh();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#content div.row:nth-of-type(4)>div:nth-of-type(3) div:nth-of-type(2) div:nth-of-type(2) button:nth-of-type(2)")));		
-		MacBookAirWishlistIcon.click();
+		((ProxyDriver)wd).navigate().refresh();
+		((ProxyDriver)wd).click(MacBookAirWishlistIcon);
 	}
 
 	public String getSuccessBannerText() {
-		wait.until(ExpectedConditions.visibilityOf(successBanner));
-		return successBanner.getText();
+		return ((ProxyDriver)wd).getText(successBanner);
 	}
 
 	
 	public MyWishListPage clickWishList() {
-		driver.navigate().refresh();
-		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#wishlist-total")));
-		wishlistLink.click();
-		return new MyWishListPage();
+		((ProxyDriver)wd).navigate().refresh();
+		((ProxyDriver)wd).click(wishlistLink);
+		return new MyWishListPage(wd,true);
+	}
+
+	@Override
+	protected void isLoaded() {
+
+		if(!urlContains(wd.getCurrentUrl())) {
+			throw new Error();
+		}
+	}
+	
+	@Override
+	protected String getPageUrl() {
+		return getDomain() + PAGE_URL;
 	}
 }
