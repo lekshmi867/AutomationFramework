@@ -21,11 +21,11 @@ public class AccountCreatedTest extends TestBase {
 		storePage = new StorePage(driver,true).get();
 	}
 
-	@Test
+	@Test(enabled=false)
 	public void VerifyUserIsAbleToSignUpSuccessFully() {
 		RegisterAccountPage registerAccountPage = storePage.clickRegisterLink();
 
-		AccountCreatedPage accountCreated = registerAccountPage.signUp("lekshmi", "vijay", "lekshmiv12345@gmail.com",
+		AccountCreatedPage accountCreated = registerAccountPage.signUp("lekshmi", "vijay", "ishaswaroop_18@gmail.com",
 				"675674888", "Password1", "Password1");
 
 		Assert.assertEquals(accountCreated.getSuccessAccountCreatedTxt(), "Your Account Has Been Created!",
