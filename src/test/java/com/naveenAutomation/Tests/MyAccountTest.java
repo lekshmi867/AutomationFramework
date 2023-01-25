@@ -51,11 +51,6 @@ public class MyAccountTest extends TestBase {
 
 	}
 	
-	@Test(enabled=false)
-	public void testSomething() {
-		verifyLogin();
-		Assert.assertEquals(myAccountPage.getMyAccountText(), "Account", "Login Failed");
-	}
 	
 	@AfterMethod
 	public void teardown() {
